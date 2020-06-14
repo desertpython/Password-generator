@@ -32,3 +32,113 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title> 
+		How to use Checkbox inside Select 
+		Option using JavaScript? 
+	</title> 
+
+	<style> 
+		h1 { 
+			color: green; 
+		} 
+
+		.multipleSelection { 
+			width: 300px; 
+			background-color: #BCC2C1; 
+		} 
+
+		.selectBox { 
+			position: relative; 
+		} 
+
+		.selectBox select { 
+			width: 100%; 
+			font-weight: bold; 
+		} 
+
+		.overSelect { 
+			position: absolute; 
+			left: 0; 
+			right: 0; 
+			top: 0; 
+			bottom: 0; 
+		} 
+
+		#checkBoxes { 
+			display: none; 
+			border: 1px #8DF5E4 solid; 
+		} 
+
+		#checkBoxes label { 
+			display: block; 
+		} 
+
+		#checkBoxes label:hover { 
+			background-color: #4F615E; 
+		} 
+	</style> 
+</head> 
+
+<body> 
+	<h1>Choose Your Components!</h1> 
+
+	<h2>Use CheckBox inside Select Option</h2> 
+
+	<form> 
+		<div class="multipleSelection"> 
+			<div class="selectBox"
+				onclick="showCheckboxes()"> 
+				<select> 
+					<option>Select components</option> 
+				</select> 
+				<div class="overSelect"></div> 
+			</div> 
+
+			<div id="checkBoxes"> 
+				<label for="first"> 
+					<input type="checkbox" id="first" /> 
+					Uppercase letters
+				</label> 
+				
+				<label for="second"> 
+					<input type="checkbox" id="second" /> 
+					Lowercase letters
+				</label> 
+				<label for="third"> 
+					<input type="checkbox" id="third" /> 
+					Numbers
+				</label> 
+				<label for="fourth"> 
+					<input type="checkbox" id="fourth" /> 
+					Special characters
+				</label> 
+			</div> 
+		</div> 
+	</form> 
+
+	<script> 
+		var show = true; 
+
+		function showCheckboxes() { 
+			var checkboxes = 
+				document.getElementById("checkBoxes"); 
+
+			if (show) { 
+				checkboxes.style.display = "block"; 
+				show = false; 
+			} else { 
+				checkboxes.style.display = "none"; 
+				show = true; 
+			} 
+		} 
+	</script> 
+</body> 
+
+</html> 
+
+<!--credit to Geeks for Geeks for assistance in the drop-down code...-->

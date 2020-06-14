@@ -3,6 +3,7 @@
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+var parse = parseInt()
 
 // Write password to the #password input
 function writePassword() {
@@ -28,3 +29,5 @@ generateBtn.addEventListener("click", writePassword);
 //for and while
 //array
 //switch
+
+//prompt
