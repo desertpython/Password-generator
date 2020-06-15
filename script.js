@@ -1,7 +1,7 @@
 // Assignment code here
-var lowerCase = ["a","b","c"]
-var upperCase = ["A", "B", "C"]
-var numbers = [1, 2, 3]
+var lowerCase = ["a","b","c","d","e","f"]
+var upperCase = ["A", "B", "C","D","E","F"]
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 var special = ["!", "%", "^"]
 var guarenteedCharacters = []
 var availableCharacters = []
@@ -13,48 +13,41 @@ function generatePassword(){
 
   }
 
-function givePrompts(){
   var lower = confirm("Do you want to use lowercase characters?");
   var upper = confirm("would you like to use uppercase letters?");
   var num = confirm("You can use numbers if you like. Proceed?");
   var spec = confirm("You can also use special characters. Continue?");
 
   if (lower) {
-    console.log("lower");
     guarenteedCharacters.push(randomize(lowerCase));
     availableCharacters.concat(lowerCase);
   }
   if (upper) {
-    console.log("upper");
     guarenteedCharacters.push(randomize(upperCase));
     availableCharacters.concat(upperCase);
   }
   if (num) {
-    console.log("num");
     guarenteedCharacters.push(randomize(numbers));
     availableCharacters.concat(numbers);
   }
   if (spec) {
-    console.log("spec");
     guarenteedCharacters.push(randomize(special));
     availableCharacters.concat(special);
   }
-  for (var i = guarenteedCharacters.length + 1; i < characters; i++){
-    guarenteedCharacters.push(randomize(availableCharacters))
+  for (var i = guarenteedCharacters.length; i < characters; i++){
+    guarenteedCharacters.push(randomize(guarenteedCharacters))
   } 
+  return guarenteedCharacters.join(availableCharacters);
 }
 
-givePrompts();
 
-  //return guarenteedCharacters.join(); //google .join to make sure string is added//
-}
 
 function randomize(characterArray) {
   var randomIndex = Math.floor(Math.random() * characterArray.length);
   return characterArray [randomIndex];
 }
 
-//generatePassword();
+
 
 
 
@@ -75,6 +68,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+writePassword()
 //button
 //when click button, choose criteria
 //choose lenght (8 10 128 char)
