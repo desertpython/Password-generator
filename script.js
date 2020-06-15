@@ -22,20 +22,32 @@ function generatePassword(){
     guarenteedCharacters.push(randomize(lowerCase));
     availableCharacters.concat(lowerCase);
   }
+  if (upper) {
+    guarenteedCharacters.push(randomize(upperCase));
+    availableCharacters.concat(upperCase);
+  }
+  if (num) {
+    guarenteedCharacters.push(randomize(numbers));
+    availableCharacters.concat(numbers);
+  }
+  if (spec) {
+    guarenteedCharacters.push(randomize(special));
+    availableCharacters.concat(special);
+  }
+
+  for (var i = guarenteedCharacters.length + 1; i < characters; i++){
+    guarenteedCharacters.push(randomize(availableCharacters))
+  } 
+  return guarenteedCharacters.join(); //google .join to make sure string is added//
 }
 
 function randomize(characterArray) {
-  var randomIndex = Math.floor(Math.random() * characterArray);
+  var randomIndex = Math.floor(Math.random() * characterArray.length);
+  return characterArray [randomIndex];
 }
-//console.log(parseInt(characters));
-//var special = false
-//while (!special) {
-  //special = window.confirm("This password will include a mix of letters, numbers, and special characters. Ok to proceed?");
-  //console.log(special);
-//}
-generatePassword();
-//Take number of characters and plug in random values of different data types 
-// results in completed password
+
+//generatePassword();
+
 
 
 
